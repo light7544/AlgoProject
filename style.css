@@ -1,0 +1,439 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap");
+
+/* Base */
+
+:root {
+  --bg: #10081a;
+  --primary-1: #9f4cfc;
+  --primary-2: #df4cfc;
+  --white: #fff;
+  --text: #e6d9f5;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 10px;
+}
+
+body {
+  background: var(--bg);
+  height: 100vh;
+  overflow-x: hidden;
+  color: var(--white); 
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.flex-sb {
+  justify-content: space-between;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.section{
+  padding: 60px 10px;
+  
+}
+ /*navbar */
+
+.navbar {
+  width: 100%;
+  height: 90px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 30px;
+  background: rgba(16, 8, 26, 0.3);
+  z-index: 9;
+  color: var(--text);
+}
+
+
+
+.brand {
+  font-size: 3.6rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.nav-links {
+  flex: 0 0 33%;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 2rem;
+  padding: 5px 0;
+  font-weight: 300;
+}
+
+.nav-link.active {
+  font-weight: 500;
+  /*border-bottom: 1px solid var(--primary-1); */
+}
+
+.btn {
+  display: inline-block;
+  background: linear-gradient(
+    93.23deg,
+    var(--primary-1) 0%,
+    var(--primary-2) 100%
+  );
+  padding: 14px 26px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--white);
+  font-size: 1.6rem;
+   
+}
+
+
+.hero{
+  background-image: url(../img/hero-bg.png);
+  background-attachment: fixed;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 100vh;
+  max-height: 800px;
+  color: var(--text);
+}
+
+.hero-overlay{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(180deg, rgba(16,8,25,0.3 ) 0%,
+    var(--bg) 100%);
+    backdrop-filter: blur(20px);
+}
+
+.hero-overlay img{
+  width: 10rem;
+  position: absolute;
+  top: 120px;
+  pointer-events: none;
+  animation: float 3s ease-in-out infinite;
+}
+
+.hero-overlay img:nth-of-type(1){
+  left: 120px;
+  animation-delay: 2s;
+}
+
+.hero-overlay img:nth-of-type(2){
+  left: 300px;
+  top: 150px;
+  animation-delay: 3s;
+}
+
+
+.hero-overlay img:nth-of-type(3){
+  right: 160px;
+  animation-delay: 1s;
+}
+
+.hero-overlay img:nth-of-type(4){
+  left: 60px;
+  top: 320px;
+  animation-delay: 3s;
+}
+
+.hero-overlay img:nth-of-type(4){
+  right: 100px;
+  top: 300px;
+}
+
+.hero-overlay img:nth-of-type(5) { 
+  right: 100px; 
+  top: 300px; 
+}
+
+.hero-overlay img:nth-of-type(6) {
+  top: unset; 
+  bottom: 30px;
+  left: 300px; 
+  animation-delay: 2s;
+}
+
+.hero-overlay img:nth-of-type(7) { 
+  top: unset; 
+  bottom: 190px; 
+  right: 290px;
+}
+.hero-overlay img:nth-of-type(8) { 
+  top: unset; 
+  bottom: 20px; 
+  right: 140px;
+  animation-delay: 1s;
+}
+
+@keyframes float{
+  0% {
+    transform: translate(0,0);
+}
+
+  50% {
+    transform: translate(0,-10px);
+}
+
+  100%{
+    transform: translate(0,0);
+  }
+}
+
+.hero-content {
+  position: absolute;
+  top: 150px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  text-align: center;
+}
+
+.hero-heading {
+  font-size: 5.4rem;
+  line-height: 80px;
+  letter-spacing: 0.04em;
+  color: var(--white);
+}
+
+.hero-heading span {
+  background: linear-gradient(  #a94cfd 0%, #dd4cfc 60%,  #a94cfd 
+  100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-content .btn {
+  font-size: 1.8rem;
+  padding: 14px 50px;
+  margin-top: 30px;
+}
+
+.hero-content p {
+  font-size: 1.8rem;
+  line-height: 28px;
+  font-weight: 300;
+  width: 35%;
+  text-transform: capitalize;
+  margin: 20px 32.5%;
+}
+
+.scroll-btn {
+  display: block;
+  margin-top: 40px;
+}
+
+/*End hero section */
+
+.scroll-btn img {
+  width: 50px;
+}
+
+/* features section */
+
+.section-heading {
+  font-size: 4rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--white);
+  margin-top: 50px;
+}
+
+
+.section-container {
+  padding: 0 20px;
+  margin-top: 50px;
+}
+
+.feature{
+  width: 32%;
+  height: 420px;
+  border: 1px solid var(--primary-1);
+  border-radius: 8px;
+  color: var(--white);
+  text-align: center;
+  padding: 20px;
+}
+
+.feature-image {
+  width: 100%;
+  height: 200px;
+  background-image: url(../img/features-1.png);
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: float 3s ease-in-out infinite;
+}
+
+.feature:nth-of-type(2) .feature-image{
+  background-image: url(../img/features-2.png);
+  animation-delay: 1s;
+}
+
+.feature:nth-of-type(3) .feature-image{
+  background-image: url(../img/features-3.png);
+}
+
+.feature h4 {
+  font-size: 2.2rem;
+  font-weight: normal;
+  margin: 20px 0;
+}
+
+.feature p{
+  font-size: 1.4rem;
+  line-height: 25px;
+}
+
+.feature:hover {
+  border-color: var(--text);
+  transition: 0.4s linear;
+}
+
+/*End features section */
+
+/*offers Section */
+
+
+
+
+.offers-container {
+  width: 80%;
+  margin: 50px 10%;
+}
+
+.offers-image  {
+  width: 48%;
+  height: 460px;
+  background-image: url(../img/offers-img.png);
+  background-size: 70%;
+  background-position: left;
+  background-repeat: no-repeat;
+  animation: float 3s ease-in-out infinite;
+  
+}
+
+
+
+
+.offers-content {
+  width: 48%;
+}
+
+.offer {
+  text-align: left;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.offer h4 {
+  font-size: 2.8rem;
+  font-weight: 500;
+}
+
+.section-text {
+  line-height: 25.6px;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: rgba(252,240,255,0.6);
+}
+
+.offer p {
+  line-height: 160%;
+  margin-top: 20px;
+}
+
+
+
+/*End OFFERS section */
+
+/* Account Section */
+
+.account-container {
+  width: 85%;
+  margin: 40px 7.5%;
+}  
+
+.account-image {
+  width: 48%;
+  height: 400px;
+  background-image: url(../img/account-img.png);
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+  animation: float 3s ease-in-out infinite;
+}
+
+.account-content {
+  width: 48%;
+}
+
+.account-content p {
+  width: 80%;
+  margin-bottom: 30px;
+}
+ 
+/*resonsiveness large screen*/
+
+@media (min-width: 1420px) {
+  html {
+   font-size: 12px;
+  } 
+
+  .hero-content {
+    top: 210px;
+  }
+
+  .feature {
+    he
+
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* End Base */
